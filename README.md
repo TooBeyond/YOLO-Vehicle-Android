@@ -1,52 +1,54 @@
 # YOLO-Vehicle-Android
+
 [![License](https://img.shields.io/github/license/TooBeyond/YOLO-Vehicle-Android)](LICENSE)
 [![Android](https://img.shields.io/badge/Android-8.0%2B-brightgreen)]()
 [![Platform](https://img.shields.io/badge/Platform-Android-brightgreen)]()
 [![NCNN](https://img.shields.io/badge/NCNN-Latest-blue)]()
 [![YOLOv5](https://img.shields.io/badge/YOLOv5-v5.0-orange)]()
 
-🏆 智慧交通赛项获奖作品 | Android 端车辆识别系统
+**Android 端高性能实时车辆检测与多维特征识别系统**
 
-基于 ncnn + YOLOv5 的 Android 实时车辆检测与车牌识别系统，支持多场景、多车型的智能识别。
+本项目是一个基于 **ncnn** 推理引擎与 **YOLOv5** 架构的移动端视觉方案。它集成了实时车辆目标检测、全颜色车牌识别、特殊车辆（如危险品运输车）监控以及多种传感器数据对接。通过底层 C++ 优化与 OpenCV Native 加速，实现了在 Android 端侧的高帧率、低延迟推理。
 
 [English](./README_EN.md) | [中文](./README.md)
 
-## 🚀 特性
+---
 
-- 🎯 **车牌识别** - 支持蓝、黄、绿、白、黑五种颜色车牌
-- 🚗 **车辆检测** - 实时检测多种车型
-- ⚠️ **危险品车辆识别** - 智能识别危险品运输车辆
-- 📱 **二维码/条码识别** - 支持多种格式
-- 🏷️ **RFID 识别** - 射频识别支持
-- ⚡ **实时推理** - 本地端侧推理，无需网络
-- 🔄 **车牌矫正** - 透视变换矫正倾斜车牌
+## 🚀 核心特性 (Features)
 
-## 🏗️ 系统架构
+- 🚗 **实时目标检测** - 基于 YOLOv5 深度优化的移动端模型，实时识别多种车型。
+- 🎯 **全颜色车牌识别** - 支持蓝、黄、绿、白、黑五种颜色车牌的精准定位与字符识别。
+- 🔄 **自动透视矫正** - 针对倾斜或非正视角度拍摄的车牌，利用 OpenCV 进行透视变换（Perspective Transform）矫正。
+- ⚠️ **特殊目标监控** - 针对危险品运输车辆等特定交通目标进行实时预警。
+- ⚡ **端侧推理加速** - 采用腾讯 ncnn 框架，充分利用移动端 CPU/GPU 算力，无需联网即可运行。
+- 🏷️ **多模态数据** - 集成二维码/条码扫码识别以及 RFID 射频标签读取支持。
+
+---
+
+## 🏗️ 系统架构 (Architecture)
 
 ```mermaid
 graph TB
-    subgraph 客户端
-        A[摄像头/相册] --> B[图像预处理]
-        B --> C{YOLOv5 检测}
-        C --> D[车牌定位]
-        D --> E[透视变换矫正]
-        E --> F[CRNN 字符识别]
-        F --> G[颜色模型识别]
-        G --> H[结果展示]
+    subgraph 客户端逻辑层 (Client Layer)
+        A[Camera/Gallery] --> B[OpenCV 图像预处理]
+        B --> C{ncnn 推理引擎}
+        C --> D[YOLOv5 目标定位]
+        D --> E[车牌 ROI 提取]
+        E --> F[透视变换矫正]
+        F --> G[CRNN 字符识别]
+        G --> H[结果展示与 UI 渲染]
     end
     
-    subgraph 模型层
-        I[YOLOv5 检测模型] -.-> C
-        J[CRNN 识别模型] -.-> F
-        K[颜色分类模型] -.-> G
+    subgraph 模型资产 (Model Assets)
+        I[YOLOv5s Detection] -.-> C
+        J[CRNN Recognition] -.-> G
+        K[Color Classifier] -.-> G
     end
     
-    subgraph 底层
-        L[ncnn 推理引擎] -.-> I
-        L -.-> J
-        L -.-> K
+    subgraph 底层加速 (Native Backend)
+        L[Vulkan/CPU Parallel] -.-> C
+        M[OpenCV Android SDK] -.-> B
     end
-```
 
 ## 🛠️ 技术栈
 
@@ -130,11 +132,5 @@ YOLO-Vehicle-Android/
 ## 🤝 贡献
 
 欢迎提交 Issue 和 Pull Request！
-
-## 📄 许可证
-
-MIT License - 查看 [LICENSE](LICENSE) 详情
-
----
 
 ⭐ Star 支持一下，让更多人看到这个项目！
