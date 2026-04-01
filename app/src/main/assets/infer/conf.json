@@ -1,0 +1,15 @@
+{
+    "product": "EasyDL",
+    "modelType": 1,
+    "modelId": 50840,
+    "releaseId": 108478,
+    "nType": 0,
+    "thresholdRec": 0.3,
+    "soc": "arm",
+    "extra": {
+        "fluid": {
+            "optType": "nb"
+        }
+    },
+    "authType": "common"
+}

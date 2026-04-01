@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#00bfff"
+    android:padding="10dp"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/im_Show"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+    <ListView
+        android:id="@+id/list_Tips"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:id="@+id/bt_Start"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="开始" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <Button
+            android:id="@+id/btn_camera_high"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="摄像头抬头1" />
+        <Button
+            android:id="@+id/btn_Start"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:text="路线开始" />
+        <Button
+            android:id="@+id/btn_camera_low"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="摄像头低头2" />
+    </LinearLayout>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp">-->
+<!--        <Button-->
+<!--            android:id="@+id/btn_left_add"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="左转+" />-->
+<!--        <Button-->
+<!--            android:id="@+id/btn_left_reduce"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="左转-" />-->
+<!--        <Button-->
+<!--            android:id="@+id/btn_right_add"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="右转+" />-->
+<!--        <Button-->
+<!--            android:id="@+id/btn_right_reduce"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="右转-" />-->
+<!--        <Button-->
+<!--            android:id="@+id/btn_Tracing_add"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="循迹+" />-->
+<!--        <Button-->
+<!--            android:id="@+id/btn_Tracing_reduce"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="循迹-" />-->
+<!--    </LinearLayout>-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <Button
+            android:id="@+id/bt_Lpr"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="车牌" />
+        <Button
+            android:id="@+id/bt_Marker"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="标志物" />
+        <Button
+            android:id="@+id/bt_Traffic"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="红绿灯" />
+        <Button
+            android:id="@+id/bt_Qr"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="二维码" />
+        <Button
+            android:id="@+id/bt_Graphical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="图形" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <Button
+            android:id="@+id/btn_Qr_one"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="二维码3" />
+        <Button
+            android:id="@+id/btn_QR_two"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="二维码4" />
+        <Button
+            android:id="@+id/btn_skip"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="调试跳转" />
+    </LinearLayout>
+
+</LinearLayout>

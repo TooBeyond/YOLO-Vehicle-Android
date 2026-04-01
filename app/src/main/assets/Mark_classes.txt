@@ -1,0 +1,6 @@
+left
+no_just_run
+no_run
+go_run
+right
+go_home

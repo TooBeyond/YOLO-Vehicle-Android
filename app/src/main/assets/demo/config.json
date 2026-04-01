@@ -1,0 +1,17 @@
+{
+    "product": "EasyDL",
+    "modelType": 1,
+    "modelName": "交通标志物、红绿灯V4",
+    "releaseId": 108478,
+    "nType": 0,
+    "thresholdRec": 0.3,
+    "apiUrl": null,
+    "ak": null,
+    "sk": null,
+    "soc": "arm",
+    "extra": {
+        "fluid": {
+            "optType": "nb"
+        }
+    }
+}

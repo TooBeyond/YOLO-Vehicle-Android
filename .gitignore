@@ -1,0 +1,20 @@
+# Gradle 编译产物
+.gradle/
+build/
+app/build/
+sdk/build/
+
+local.properties
+
+# IDE 缓存
+.idea/
+*.iml
+
+# 临时与系统文件
+*.log
+.DS_Store
+captures/
+
+
+*.zip
+*.tar
